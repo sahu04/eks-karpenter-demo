@@ -3,12 +3,17 @@ kind: EC2NodeClass
 metadata:
   name: default
 spec:
-  role: KarpenterNodeRole
+  amiFamily: AL2
+
+  role: KarpenterNodeRole   # IMPORTANT: must exist
+
   subnetSelectorTerms:
     - tags:
         karpenter.sh/discovery: test
+
   securityGroupSelectorTerms:
     - tags:
         karpenter.sh/discovery: test
-  amiSelectorTerms:
-    - alias: al2023@latest
+
+  tags:
+    karpenter.sh/discovery: test
