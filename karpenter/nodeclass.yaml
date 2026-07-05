@@ -5,7 +5,7 @@ metadata:
 spec:
   amiFamily: AL2
 
-  role: KarpenterNodeRole   # IMPORTANT: must exist
+  role: EKSNodeRoleCluster # IMPORTANT: must exist
 
   subnetSelectorTerms:
     - tags:
