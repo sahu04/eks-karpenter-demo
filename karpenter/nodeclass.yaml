@@ -3,9 +3,12 @@ kind: EC2NodeClass
 metadata:
   name: default
 spec:
+  role: EKSNodeRoleCluster
+
   amiFamily: AL2
 
-  role: EKSNodeRoleCluster # IMPORTANT: must exist
+  amiSelectorTerms:
+    - alias: al2@latest
 
   subnetSelectorTerms:
     - tags:
